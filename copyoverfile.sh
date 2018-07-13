@@ -19,10 +19,12 @@ read enter;
 for git in ${arr[@]}; do
     for file in "$plugin_update_path"/*; do
         if [[ -d "/home/thang/solazu-git/${git}/code/theme/plugins/" ]]; then
+            echo "cp "  ${file}  " to " /home/thang/solazu-git/${git}/code/theme/plugins/;
             cp -rf ${file} /home/thang/solazu-git/${git}/code/theme/plugins/
             cd /home/thang/solazu-git/${git}/
-            git commit -am "update plugin "$(basename ${file}) ;
-            #echo "cp "  ${file}  " to " /home/thang/solazu-git/${git}/code/theme/plugins/;
+            git checkout develop
+            git add .
+            git commit -m "update plugin "$(basename ${file}) ;
             else
             echo /home/thang/solazu-git/${git}/code/theme/plugins/ "is not directory";
         fi
