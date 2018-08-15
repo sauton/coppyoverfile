@@ -4,8 +4,10 @@ plugin_update_path='/home/thang/THANGSUBMISS/pluginupdate'
 path_git_theme='/home/thang/solazu-git'
 
 declare -a arr;
-
+#arr=(jogy appexpo architect flexi grass hearty lawplus magiclean minimalist seogrow solabiz solala transera)
+arr=(cryptoio);
 echo 'Input name of git repository to packed : Example: educef'
+echo 'Or :q to get default array theme in script';
 
 pack_theme () {
             # $1 : relative path to plugin directory of theme
@@ -58,8 +60,6 @@ while : ; do
 done
 
 if [[ ${#arr[@]} < 1  ]]; then
-    #arr=(jogy appexpo architect flexi grass hearty lawplus magiclean minimalist seogrow solabiz solala transera)
-    arr=(cryptoio)
 	echo 'default array= ' ${arr[@]};
 fi
         echo ' Packing : ' ${arr[@]};
