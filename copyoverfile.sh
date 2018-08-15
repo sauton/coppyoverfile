@@ -41,11 +41,13 @@ for git in ${arr[@]}; do
         #new_line=$(sed  -n '' /home/thang/solazu-git/jogy/plugin/solazu-unyson/framework/extensions/backups/includes/module/tasks/type/class-slz-ext-backups-task-type-db-restore.php)
         #new_line=$(ls -1)
         #echo "$new_line";
-#            cd /home/thang/solazu-git/${git}/plugin
-#            zip -r solazu-unyson.zip /home/thang/solazu-git/${git}/plugin/*
-#            cp -rf /home/thang/solazu-git/${git}/plugin/solazu-unyson.zip /home/thang/solazu-git/${git}/code/theme/plugins/
-#            rm -f /home/thang/solazu-git/${git}/plugin/solazu-unyson.zip
 
+        ########### zip plugin ###############
+            cd /home/thang/solazu-git/${git}/plugin
+            zip -r solazu-unyson.zip *
+            cp -rf /home/thang/solazu-git/${git}/plugin/solazu-unyson.zip /home/thang/solazu-git/${git}/code/theme/plugins/
+            rm -f /home/thang/solazu-git/${git}/plugin/solazu-unyson.zip
+        ############## end zip ###############
                # gedit /home/thang/solazu-git/${git}/plugin/solazu-unyson/framework/extensions/backups/includes/module/tasks/type/class-slz-ext-backups-task-type-db-restore.php & disown;
 
 
@@ -63,16 +65,16 @@ for git in ${arr[@]}; do
 
 
 
-#            cd /home/thang/solazu-git/${git}
-#                git checkout develop
-#                git add .
-#                git commit -m "Update changelog.txt";
-#               git push origin develop
+            cd /home/thang/solazu-git/${git}
+                git checkout develop
+                git add .
+                git commit -m "Update unyson.zip";
+                git push origin develop
 
-#            mkdir /home/thang/themesubmit/${git};
-#            cd /home/thang/themesubmit/${git};
-#            cp -r /home/thang/solazu-git/${git}/code/theme ${git};
-#            zip -r ${git}.zip ${git};
+           # mkdir /home/thang/themesubmit/${git};
+           # cd /home/thang/themesubmit/${git};
+         #   cp -r /home/thang/solazu-git/${git}/code/theme ${git};
+          #  zip -r ${git}.zip ${git};
 
 echo 'ok';
 done
